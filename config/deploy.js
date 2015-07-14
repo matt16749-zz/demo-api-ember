@@ -23,7 +23,7 @@ module.exports = {
     buildEnv: 'staging', // Override the environment passed to the ember asset build. Defaults to 'production'
     store: {
       host: process.env.REDISTOGO_URL,
-      port: 6379
+      port: 11849
     },
     assets: {
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -36,7 +36,7 @@ module.exports = {
    production: {
     store: {        
       host: process.env.REDIS_HOST,
-      port: 9849,
+      port: 11849,
       password: process.env.REDIS_PASSWORD
     },
     assets: {
