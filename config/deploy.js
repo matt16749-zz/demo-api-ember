@@ -36,7 +36,7 @@ module.exports = {
    production: {
     store: {        
       host: process.env.REDIS_HOST,
-      port: 11809,
+      port: 9849,
       password: process.env.REDIS_PASSWORD
     },
     assets: {
