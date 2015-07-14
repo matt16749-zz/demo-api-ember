@@ -1,3 +1,5 @@
+require('dotenv').load();
+
 module.exports = {
   development: {
     buildEnv: 'development', // Override the environment passed to the ember asset build. Defaults to 'production'
@@ -13,7 +15,7 @@ module.exports = {
       exclude: ['.DS_Store', '*-test.js'], // defaults to empty array
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
       secretAccessKey: process.env.AWS_ACCESS_KEY,
-      bucket: process.env.S3_BUCKET
+      bucket: 'propelx-ember'
     }
   },
 
@@ -26,21 +28,21 @@ module.exports = {
     assets: {
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
       secretAccessKey: process.env.AWS_ACCESS_KEY,
-      bucket: process.env.S3_BUCKET
+      bucket: 'propelx-ember'
     },
     manifestPrefix: 'stage-app' // optional, defaults to this.project.name()
   },
 
    production: {
-    store: {
-      host: process.env.REDISTOGO_URL,
-      port: 6379,
-      password: ''
+    store: {        
+      host: process.env.REDIS_HOST,
+      port: 11809,
+      password: process.env.REDIS_PASSWORD
     },
     assets: {
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
       secretAccessKey: process.env.AWS_ACCESS_KEY,
-      bucket: process.env.S3_BUCKET
+      bucket: 'propelx-ember'
     }
   }
 };
